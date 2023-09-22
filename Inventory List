@@ -1,0 +1,20 @@
+--An inventory list for a fictional arts and crafts store called 'Bits and Bobs'--
+CREATE TABLE bits_and_bobs (id INTEGER PRIMARY KEY, item TEXT, categories TEXT, colour TEXT, country TEXT, price_rm NUMERIC, customer_rating INTEGER);
+INSERT INTO bits_and_bobs VALUES (1, "Nona Wool","Knitting","Blue","Japan",3.99, 4);
+INSERT INTO bits_and_bobs VALUES (2, "Nona Wool","Knitting","Green","Japan",3.99, 4);
+INSERT INTO bits_and_bobs VALUES (3, "Nona Wool","Knitting","Pink","Japan",3.99, 4);
+INSERT INTO bits_and_bobs VALUES (4, "Darning Needle","Crochet","Multicoloured","South Korea",1.50, 3);
+INSERT INTO bits_and_bobs VALUES (5, "Rubber Thimbles","Embroidery","Multicoloured","Malaysia",20, 5);
+INSERT INTO bits_and_bobs VALUES (6, "Embroidery Scissors","Embroidery","Blue","China",4.50, 5);
+INSERT INTO bits_and_bobs VALUES (7, "Metallic Thread","Embroidery","Multicoloured","China",20, 4);
+INSERT INTO bits_and_bobs VALUES (8, "Tracing Paper","Embroidery","Multicoloured","China",1.00, 5);
+INSERT INTO bits_and_bobs VALUES (9, "Tracing Pen","Embroidery","Multicoloured","China",8.50, 4);
+INSERT INTO bits_and_bobs VALUES (10, "6mm Beads","Jewellery","White","Japan",1.50, 4);
+INSERT INTO bits_and_bobs VALUES (11, "6mm Beads","Jewellery","Yellow","Japan",1.50, 4);
+INSERT INTO bits_and_bobs VALUES (12, "6mm Beads","Jewellery","Red","Japan",1.50, 5);
+INSERT INTO bits_and_bobs VALUES (13, "6mm Beads","Jewellery","Multicoloured","Japan",1.50, 4);
+INSERT INTO bits_and_bobs VALUES (14, "DIY Crochet Kit-Tiger","Crochet","Multicoloured","South Korea",20.50, 4);
+INSERT INTO bits_and_bobs VALUES (15, "DIY Crochet Kit-Bear","Crochet","Multicoloured","South Korea",20.50, 4);
+INSERT INTO bits_and_bobs VALUES (16, "DIY Crochet Kit-Frog","Crochet","Multicoloured","South Korea",20.50, 5);
+SELECT*FROM bits_and_bobs WHERE customer_rating >3 ORDER BY price_rm;
+SELECT categories, SUM(price_rm) FROM bits_and_bobs WHERE customer_rating>3 GROUP BY categories
